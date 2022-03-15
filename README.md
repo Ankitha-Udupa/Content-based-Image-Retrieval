@@ -3,6 +3,28 @@
 ## About
 The purpose of this project is to learn how to manipulate and analyze images at a pixel level to do image matching, or pattern recognition. I have explored baseline matching, histogram-based matching, multi-histogram-based matching, color and texture-based matching, HSV based matching and with sum squared distance and histogram intersection distance metrics. 
 
+## List of features:
+
+The software could be used to:
+1. Match images by using rgb values from 9x9 centre
+2. Match images by using 2D chromaticity histograms and histogram intersection.
+3. Match images by using 2D chromaticity histograms and texture histograms along with histogram intersection.
+4. Match images by using 2D chromaticity histograms with sectioned target image.
+5. Match images by using HSV histograms and histogram intersection.
+
+## How To Run:
+   
+   Run the main.cpp file with the following command argumets.
+   1. target filename for T e.g pic1.jpg
+   2. A directory of images as the database B.
+   3. he feature type: baseline, histogram, multihistogram, texture, hsv, extension.
+   4. matching method: ssd, intersection.
+   5. number of images N to return. 
+   6. Path to csv feature file.
+      
+## Operating system and IDE
+   I have used MacOS operating system and Xcode IDE to implement the project.
+
 ## Baseline Matching
 In this task we first compute the feature vector from a 9x9 square in the centre of the image. The feature vector of the target image is then compared to every other image in the database using sum squared distance metric. This task simply involves comparing the pixel values of two images in order to check for similarity between the image. 
 
@@ -16,7 +38,7 @@ In this task we first compute the feature vector from a 9x9 square in the centre
 
 ![pic 0233](https://user-images.githubusercontent.com/44782426/158473541-bbc2b49a-ffbe-4ca5-ad0f-0db674fd03b0.jpg)
 
-Histogram Matching
+## Histogram Matching
 We compute a 2D rg histogram as the feature vector. We compute the r-g chromaticity for each pixel and assigned them to 16 bins to create a histogram. We then normalize the histogram. Histogram intersection is used to calculate the similarity between the two histograms. The distance metric is 1-similarity achieved. This task shows us how leveraging the spatially invariant attribute of histograms leads to good results for image matching.
 
 **Target Image**
@@ -52,7 +74,9 @@ This 3D histogram consists of 32 bins. I wanted to explore HSV values instead of
 ![pic 0747](https://user-images.githubusercontent.com/44782426/158474488-741f726b-a849-41e1-ba7e-0f03649d7cdb.jpg)
 
 **Top Two Matches**
+
 ![pic 0723](https://user-images.githubusercontent.com/44782426/158474607-341b80ae-7864-4428-86b9-105395891ae5.jpg)
+
 ![pic 0746](https://user-images.githubusercontent.com/44782426/158474609-5e592089-2412-404d-bef6-0d6167feadd1.jpg)
 
 **Target Image**
@@ -63,4 +87,5 @@ This 3D histogram consists of 32 bins. I wanted to explore HSV values instead of
 **Top Two Matches**
 
 ![pic 0014](https://user-images.githubusercontent.com/44782426/158474755-1587d6de-2fad-40ad-8256-c56e60b494f8.jpg)
+
 ![pic 0017](https://user-images.githubusercontent.com/44782426/158474756-6b4fa2fb-3cc0-4297-a0e2-828417225ea8.jpg)
